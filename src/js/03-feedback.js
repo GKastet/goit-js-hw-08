@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle';
 
-refs = {
+const refs = {
   form: document.querySelector('.feedback-form'),
 };
 
@@ -13,9 +13,8 @@ formTotal.addEventListener('input', throttle(handlerFormInput), 500);
 function handlerFormInput(evt) {
   const emailText = inputEmail.value;
   inputData.email = emailText;
-  localStorage.setItem('feedback-form-state', JSON.stringify(inputData));
   const messageText = inputMessage.value;
-  inputData.message = messageText;
+  inputData.message = messageText;  
   localStorage.setItem('feedback-form-state', JSON.stringify(inputData));
 }
 
